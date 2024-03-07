@@ -1,0 +1,6 @@
+### Blog  Web Application Using React.js, Node.js, MongoDB, Express.js
+
+This is a full client(frontend) and server(backend) side code for an Blog web application for HYPE SQUARE MEDIA ..! Assignment.
+
+# Install Dependencies
+**For Dev** - `npm i && npm run dev`
