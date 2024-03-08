@@ -5,10 +5,8 @@ import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import SignUp from './pages/SignUp';
 import Header from './components/Header';
-import Research from "./pages/Research";
-import Contact from "./pages/Contact";
-import Projects from "./pages/Projects";
 import Footer from './components/Footer';
+import PrivateRoute from "./components/admin/PrivateRoute";
 
 export default function App() {
   return (
@@ -16,18 +14,16 @@ export default function App() {
     <Header />
     <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/dashboard' element={<Dashboard/>} />
-        <Route path='/research' element={<Research/>} />
-        <Route path='/contact' element={<Contact/>} />
-        <Route path='/projects' element={<Projects/>} />
-
+        <Route element={<PrivateRoute />}>
+          <Route path='/dashboard' element={<Dashboard />} />
+        </Route>
+       
 
     </Routes>
     
     <Footer />
     </BrowserRouter>
   )
-}
+};
