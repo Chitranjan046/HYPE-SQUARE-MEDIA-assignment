@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema({
         default:
           'https://hypesquaremedia.com/wp-content/uploads/2024/01/about_image_bg.png',
       },
+      isAdmin: {
+        type: Boolean,
+        default: false,
+      },
     }, {timestamps: true}
 );
 

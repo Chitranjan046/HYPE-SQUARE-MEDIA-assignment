@@ -5,6 +5,7 @@ import cors from 'cors';
 import connectDB from './config/db.js';
 import userRoutes from './routes/userRoute.js';
 import authRoutes from './routes/authRoute.js';
+import postRoutes from './routes/postRoute.js';
 import cookieParser from 'cookie-parser';
 
 
@@ -21,7 +22,7 @@ connectDB();
 // Routes
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
-
+app.use('/api/post', postRoutes);
 
 
 
