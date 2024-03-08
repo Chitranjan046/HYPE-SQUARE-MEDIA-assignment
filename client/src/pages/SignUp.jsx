@@ -1,6 +1,7 @@
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import GAuth from '../components/GAuth';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -43,13 +44,14 @@ export default function SignUp() {
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
             <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-            <i>HYPE SQUARE</i>
+             <i>Cpx</i>
             </span>
-           
+            
           </Link>
           <p className='text-sm mt-5'>
-            This is a HYPE SQUARE MEDIA ..! Assignment project. You can sign up with your email and password
-            or with Google.
+            Chitranjan cccccccccccccccccccccccccccccc
+            ccccccccccccccccccccccccccccccccccccccccc
+            ccccccccccccccccccccccccccccccccc
           </p>
         </div>
         {/* right */}
@@ -97,6 +99,7 @@ export default function SignUp() {
                 'Sign Up'
               )}
             </Button>
+            <GAuth />
           </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span>Have an account?</span>

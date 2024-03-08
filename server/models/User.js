@@ -15,6 +15,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required:true,
     },
+    profilePicture: {
+        type: String,
+        default:
+          'https://hypesquaremedia.com/wp-content/uploads/2024/01/about_image_bg.png',
+      },
     }, {timestamps: true}
 );
 
