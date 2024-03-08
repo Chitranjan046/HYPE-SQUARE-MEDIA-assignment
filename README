@@ -1,6 +1,57 @@
 ### Blog  Web Application Using React.js, Node.js, MongoDB, Express.js
 
-This is a full client(frontend) and server(backend) side code for an Blog web application for HYPE SQUARE MEDIA ..! Assignment.
+1 This is a full client(frontend) and server(backend) side code for an Blog web application for HYPE SQUARE MEDIA ..! Assignment. Using MERN stack 
+
+2 I have added Google Auth and file storage  using firbase.
+
+3 For State managment I have using Redux
+
+
+### Installation guid
+
 
 # Install Dependencies
+
 **For Dev** - `npm i && npm run dev`
+
+
+## Env Variables
+
+Make Sure to Create a .env file in root directory and add appropriate variables in order to use the app.
+
+**Essential Variables**  For client side folder 
+
+Firebase Variable
+
+VITE_FIREBASE_KEY= `from firebase`
+
+VITE_AUTH_DOMAIN= `from firebase`
+
+VITE_PROJECT_ID=`from firebase`
+
+VITE_STORAGE_BUCKET=`from firebase`
+
+VITE_MESSAGING_SENDER_ID=`from firebase`
+
+VITE_APP_ID=`from firebase`
+
+## and I am Using Storage and  Google Authentication  
+
+1 Enable firbase Google Authentication in firebase 
+2 set storage configuration 
+
+
+### For backend 
+
+## In Root Directory  
+
+npm install for backend server(make sure You are in root directory not server directory).
+
+ENV varible 
+
+MONGO_URI=`from mongoDB atlas`   OR  Locally 
+
+JWT_SECRET=`Put difficult secret for secuirity porpus`
+
+
+
