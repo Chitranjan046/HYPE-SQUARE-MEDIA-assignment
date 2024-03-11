@@ -114,7 +114,7 @@ export default function CommentSection({ postId }) {
     <div className='max-w-2xl mx-auto w-full p-3'>
       {currentUser ? (
         <div className='flex items-center gap-1 my-5 text-gray-500 text-sm'>
-          <p>Signed in as:</p>
+          <p>Signed in :</p>
           <img
             className='h-5 w-5 object-cover rounded-full'
             src={currentUser.profilePicture}
@@ -146,6 +146,7 @@ export default function CommentSection({ postId }) {
             maxLength='200'
             onChange={(e) => setComment(e.target.value)}
             value={comment}
+            className='bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'
           />
           <div className='flex justify-between items-center mt-5'>
             <p className='text-gray-500 text-xs'>

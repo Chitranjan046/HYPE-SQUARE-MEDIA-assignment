@@ -166,7 +166,7 @@ export default function DashProfile() {
     }
   };
   return (
-    <div className='max-w-lg mx-auto p-3 w-full'>
+    <div className='max-w-lg mx-auto p-3 w-full '>
       <h1 className='my-7 text-center font-semibold text-3xl'>Profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
@@ -217,6 +217,7 @@ export default function DashProfile() {
         <TextInput
           type='text'
           id='username'
+          className='bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'
           placeholder='username'
           defaultValue={currentUser.username}
           onChange={handleChange}
@@ -224,6 +225,7 @@ export default function DashProfile() {
         <TextInput
           type='email'
           id='email'
+          className='bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'
           placeholder='email'
           defaultValue={currentUser.email}
           onChange={handleChange}
@@ -231,12 +233,14 @@ export default function DashProfile() {
         <TextInput
           type='password'
           id='password'
+          className='bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'
           placeholder='password'
           onChange={handleChange}
         />
         <Button
           type='submit'
           gradientDuoTone='purpleToBlue'
+          
           outline
           disabled={loading || imageFileUploading}
         >
@@ -254,13 +258,20 @@ export default function DashProfile() {
           </Link>
         )}
       </form>
-      <div className='text-red-500 flex justify-between mt-5'>
-        <span onClick={() => setShowModal(true)} className='cursor-pointer'>
-          Delete Account
-        </span>
-        <span onClick={handleSignout} className='cursor-pointer'>
-          Sign Out
-        </span>
+      <div className=' flex justify-between mt-5'>
+      <span 
+    onClick={() => setShowModal(true)} 
+    className='cursor-pointer border border-red-500 rounded px-2 py-1 text-red-500 hover:bg-red-500 hover:text-white'
+>
+    Delete Account
+</span>
+
+<span 
+    onClick={handleSignout} 
+    className='cursor-pointer border border-green-500 rounded px-2 py-1 text-green-500 hover:bg-green-500 hover:text-white'
+>
+    Sign Out
+</span>
       </div>
       {updateUserSuccess && (
         <Alert color='success' className='mt-5'>

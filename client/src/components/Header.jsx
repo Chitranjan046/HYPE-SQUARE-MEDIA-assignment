@@ -50,15 +50,15 @@ export default function Header() {
   };
 
   return (
-    <Navbar className='border-b-2 bg-gradient-to-r from-green-500 via-amber-500 to-red-500 '>
+    <Navbar className='border-b-2 bg-gradient-to-bl from-yellow-300 via-green-300 to-red-300'>
       <Link
         to='/'
-        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
+        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-red'
       >
-        <span className='px-2 py-1 bg-gradient-to-r from-orange-700 via-indigo-700 to-slate-400 rounded-lg text-white'>
+        <span className='px-2 py-1 bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-yellow-500'>
           Chitranjan
         </span>
-        <i className='text-pink-600'>Patel</i>
+        
       </Link>
       <form onSubmit={handleSubmit}>
         <TextInput
@@ -116,18 +116,19 @@ export default function Header() {
         <Navbar.Link active={path === "/"} as={'div'}>
           <Link to='/'>Home</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === "/about"} as={'div'}>
-          <Link to='/about'>About Us</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === "/contact"} as={'div'}>
-          <Link to='/contact'>Contact Us</Link>
-        </Navbar.Link>
         <Navbar.Link active={path === "/projects"} as={'div'}>
           <Link to='/projects'>Projects</Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/research"} as={'div'}>
           <Link to='/research'>Research</Link>
         </Navbar.Link>
+        <Navbar.Link active={path === "/about"} as={'div'}>
+          <Link to='/about'>About Us</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === "/contact"} as={'div'}>
+          <Link to='/contact'>Contact Us</Link>
+        </Navbar.Link>
+       
       </Navbar.Collapse>
     </Navbar>
   );

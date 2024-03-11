@@ -35,7 +35,7 @@ export const getposts = async (req, res, next) => {
   try {
     const startIndex = parseInt(req.query.startIndex) || 0;
     // limit post display in post section see user
-    const limit = parseInt(req.query.limit) || 9;
+    const limit = parseInt(req.query.limit) || 10;
     // asc means acending 1 other wise decending post in mongoDB
     const sortDirection = req.query.order === 'asc' ? 1 : -1;
     

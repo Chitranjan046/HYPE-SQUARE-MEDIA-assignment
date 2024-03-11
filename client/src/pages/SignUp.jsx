@@ -2,6 +2,7 @@ import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import GAuth from '../components/GAuth';
+import background2 from '../assets/background/background2.jpeg';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -38,40 +39,42 @@ export default function SignUp() {
     }
   };
   return (
-    <div className='min-h-screen mt-20'>
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5'>
+    <div
+      className='min-h-screen  bg-cover bg-center'
+      style={{ backgroundImage: `url(${background2})` }}
+    >
+      <div className='flex max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5 bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-blue-500'>
         {/* left */}
-        <div className='flex-1'>
+        <div className='flex-1 bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-             <i>Cpx</i>
+            <span className='px-2 py-1 bg-gradient-to-bl from-yellow-300 via-green-300 to-red-300 rounded-lg text-white'>
+              <i>Cpx</i>
             </span>
-            
           </Link>
           <p className='text-sm mt-5'>
-            Chitranjan cccccccccccccccccccccccccccccc
-            ccccccccccccccccccccccccccccccccccccccccc
-            ccccccccccccccccccccccccccccccccc
+            This is a Hype Square Media Project. You can sign Up with your email and password
+            or with Google.
           </p>
         </div>
         {/* right */}
 
-        <div className='flex-1'>
+        <div className='flex-1 bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
-            <div>
+            <div className=''>
               <Label value='Your username' />
-              <TextInput
+              <TextInput className=' bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'
                 type='text'
                 placeholder='Username'
                 id='username'
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className=''>
               <Label value='Your email' />
               <TextInput
                 type='email'
-                placeholder='name@company.com'
+                className='bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'
+                placeholder='name@gmail.com'
                 id='email'
                 onChange={handleChange}
               />
@@ -80,6 +83,7 @@ export default function SignUp() {
               <Label value='Your password' />
               <TextInput
                 type='password'
+                className='bg-white bg-opacity-50 rounded-lg p-5 shadow-inner shadow-gray-500'
                 placeholder='Password'
                 id='password'
                 onChange={handleChange}
@@ -87,6 +91,7 @@ export default function SignUp() {
             </div>
             <Button
               gradientDuoTone='purpleToPink'
+              className='bg-gradient-to-bl from-yellow-300 via-green-300 to-red-300 rounded-lg text-white'
               type='submit'
               disabled={loading}
             >
@@ -117,3 +122,6 @@ export default function SignUp() {
     </div>
   );
 }
+
+
+

@@ -44,6 +44,8 @@ export default function DashSidebar() {
                 active={tab === 'dash' || !tab}
                 icon={HiChartPie}
                 as='div'
+              className='bg-gradient-to-bl from-teal-300 via-pink-300 to-blue-300'
+              
               >
                 Dashboard
               </Sidebar.Item>
@@ -56,6 +58,7 @@ export default function DashSidebar() {
               label={currentUser.isAdmin ? 'Admin' : 'User'}
               labelColor='dark'
               as='div'
+              className='bg-gradient-to-bl from-yellow-300 via-green-300 to-red-300'
             >
               Profile
             </Sidebar.Item>
@@ -66,6 +69,8 @@ export default function DashSidebar() {
                 active={tab === 'posts'}
                 icon={HiDocumentText}
                 as='div'
+              className='bg-gradient-to-bl from-yellow-300 via-green-300 to-red-300'
+
               >
                 Posts
               </Sidebar.Item>
@@ -78,7 +83,10 @@ export default function DashSidebar() {
                   active={tab === 'users'}
                   icon={HiOutlineUserGroup}
                   as='div'
+              className='bg-gradient-to-bl from-yellow-300 via-green-300 to-red-300'
+
                 >
+
                   Users
                 </Sidebar.Item>
               </Link>
@@ -87,6 +95,8 @@ export default function DashSidebar() {
                   active={tab === 'comments'}
                   icon={HiAnnotation}
                   as='div'
+              className='bg-gradient-to-bl from-yellow-300 via-green-300 to-red-300'
+
                 >
                   Comments
                 </Sidebar.Item>
@@ -95,7 +105,7 @@ export default function DashSidebar() {
           )}
           <Sidebar.Item
             icon={HiArrowSmRight}
-            className='cursor-pointer'
+            className='cursor-pointer bg-gradient-to-bl from-teal-300 via-pink-300 to-blue-300'
             onClick={handleSignout}
           >
             Sign Out

@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom';
-import CallToAction from '../components/posts/CallToAction';
 import { useEffect, useState } from 'react';
 import PostCard from '../components/posts/PostCard';
 
+// Import your images
+import image1 from '../assets/image/image1.jpeg';
+import image2 from '../assets/image/image2.jpeg';
+import image3 from '../assets/image/image3.jpeg';
+import image4 from '../assets/image/image4.jpeg';
+import image5 from '../assets/image/image5.jpeg';
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -13,14 +20,35 @@ export default function Home() {
       setPosts(data.posts);
     };
     fetchPosts();
+  }, []);  
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5); // Assuming you have 5 images
+    }, 3000);
+
+    return () => clearInterval(intervalId);
   }, []);
+  
   return (
     <div>
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto '>
-        <h1 className='text-3xl font-bold lg:text-6xl'>Welcome to Cpx Chitranjan </h1>
-        <p className='text-gray-500 text-xs sm:text-sm'>
-        My name is Chitranjan Patel  CEO and MD of CPX Pvt Limited . I working as a Software Engineer with 1+ years of experience background in creating and executing innovative software solutions to enhance business productivity a wide range of  technology skills. Proven ability to leverage full-stack knowledge and experience to build interactive and user-censered website designs to scale.  Highly experienced in all aspects of the software development lifecycle and end-to-end project management,  from concept through to development and delivery Consistently recognized as a hands-on. 
-        </p>
+      <div>
+        <div className="slideshow-container">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <div
+              key={index}
+              className={`mySlides fade ${index === currentImageIndex ? 'block' : 'hidden'}`}
+            >
+              {/* Use the imported images */}
+              <img src={[image1, image2, image3, image4, image5][index]} alt={`Image ${index + 1}`} style={{ width: '100%', height: '5in' }} />
+            </div>
+          ))}
+        </div>
+
+        {/* Next and previous buttons */}
+        <a className="prev" onClick={() => setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? 4 : prevIndex - 1))}>&#10094;</a>
+        <a className="next" onClick={() => setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5)}>&#10095;</a>
+      
         <Link
           to='/search'
           className='text-xs sm:text-sm text-teal-500 font-bold hover:underline'
@@ -28,9 +56,7 @@ export default function Home() {
           View all posts
         </Link>
       </div>
-      <div className='p-3 bg-amber-100 dark:bg-slate-700'>
-        <CallToAction />
-      </div>
+      
 
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7'>
         {posts && posts.length > 0 && (
